@@ -64,9 +64,9 @@
             @foreach($urls as $url)
             <tr>
                 <td>{{ $url['codigo'] }}</td>
-                <td> <a href="{{ $url['urlOriginal'] }}">{{ $url['urlAcortada']  }}</a>
+                <td> <a href="{{ $url['urlOriginal'] }}">{{ $url['urlOriginal']  }}</a>
                 </td>
-                <td>{{ $url['urlOriginal'] }}</td>
+                <td>{{ $url['urlAcortada'] }}</td>
             </tr>
             @endforeach
             @endif

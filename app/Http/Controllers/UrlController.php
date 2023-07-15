@@ -43,22 +43,6 @@ class UrlController extends Controller
         return view('index', ['urlAcortada' => $urlAcortada, 'urls' => $urls]);
     }
 
-    public function mostrarUrl($urlAcortada)
-    {
-        $jsonFile = storage_path('urls.json');
-        $urls = [];
-
-        if (file_exists($jsonFile)) {
-            $jsonContent = file_get_contents($jsonFile);
-            if ($jsonContent === false) {
-                // Error al leer el archivo JSON
-                die("Error al leer el archivo JSON");
-            }
-            $urls = json_decode($jsonContent, true);
-        }
-
-        return view('mostrar-url', compact('urlAcortada', 'urls'));
-    }
     private function guardarUrlEnJson($codigo, $urlOriginal, $urlAcortada)
     {
         $jsonFile = storage_path('urls.json');
